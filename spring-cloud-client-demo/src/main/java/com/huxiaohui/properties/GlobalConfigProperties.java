@@ -1,34 +1,27 @@
 package com.huxiaohui.properties;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.context.annotation.Configuration;
 
 @RefreshScope
 @ConfigurationProperties(prefix="neo")
+@EnableConfigurationProperties
+@Configuration
 public class GlobalConfigProperties {
-	
-    private static String hello;
-	
-    private static String bye;
-
-	public static String getHello() {
+	private String hello;
+	private String byebye;
+	public String getHello() {
 		return hello;
 	}
-
-	@Value("${neo.hello}")
-	public void setHello(String value) {
-		hello = value;
+	public void setHello(String hello) {
+		this.hello = hello;
 	}
-
-	public static String getBye() {
-		return bye;
+	public String getByebye() {
+		return byebye;
 	}
-
-	@Value("${neo.hello}")
-	public void setBye(String value) {
-		bye = value;
+	public void setByebye(String byebye) {
+		this.byebye = byebye;
 	}
-    
-    
 }
