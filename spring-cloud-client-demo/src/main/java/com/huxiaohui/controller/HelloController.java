@@ -1,7 +1,10 @@
 package com.huxiaohui.controller;
 
+import java.util.Date;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,4 +23,6 @@ public class HelloController {
     public String from(@PathVariable String userName,@RequestParam(required=false) String password) {
         return globalConfigProperties.getByebye()+" "+userName+" "+globalConfigProperties.getHello()+" "+password;
     }
+    
+    
 }
