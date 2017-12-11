@@ -5,6 +5,5 @@
 	    <br>  
 	    Time: ${time?time}  
 	    <br>  
-	    Message: ${message}  
 	</body>  
 </html>

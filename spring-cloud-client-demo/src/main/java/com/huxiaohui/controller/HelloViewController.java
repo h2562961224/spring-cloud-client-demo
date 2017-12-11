@@ -9,10 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HelloViewController {
-	@RequestMapping("/getHello/{message}")  
-    public String web(Map<String,Object> model,@PathVariable String message){  
-        model.put("time",new Date());  
-        model.put("message",message);  
+	@RequestMapping("/getHello")  
+    public String web(Map<String,Object> model){  
+        model.put("time",new Date()); 
         return "hello";
     } 
 }
